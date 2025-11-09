@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Santhosh M — Data Analyst Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --muted:#94a3b8; --accent:#06b6d4; --glass: rgba(255,255,255,0.04);
+      --radius:14px; --maxw:1100px;
+      font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,#071022 0%,#071326 100%);color:#e6eef6;display:flex;justify-content:center;padding:36px 18px}
+    .wrap{width:100%;max-width:var(--maxw)}
+
+    header{display:flex;gap:20px;align-items:center;margin-bottom:28px}
+    .avatar{width:110px;height:110px;border-radius:18px;overflow:hidden;flex:0 0 110px;border:3px solid rgba(255,255,255,0.06);background:linear-gradient(135deg,var(--accent),#7c3aed)}
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+    .hero{flex:1}
+    .hero h1{margin:0;font-size:26px;letter-spacing:-0.5px}
+    .hero p{margin:6px 0 0;color:var(--muted)}
+
+    .top-actions{display:flex;gap:10px;margin-top:12px}
+    .btn{background:var(--accent);color:#042027;padding:9px 12px;border-radius:10px;font-weight:600;text-decoration:none}
+    .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+
+    main{display:grid;grid-template-columns:1fr 380px;gap:22px}
+
+    /* Left column */
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:var(--radius);box-shadow:0 6px 22px rgba(2,6,23,0.6);}
+    .section-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+    .section-title h3{margin:0;font-size:16px}
+    .muted{color:var(--muted);font-size:14px}
+
+    .about p{line-height:1.55;color:#d7e6f5}
+
+    .projects{display:grid;grid-template-columns:repeat(1,1fr);gap:12px}
+    .project{display:flex;gap:12px;align-items:center}
+    .project-thumb{width:110px;height:70px;border-radius:10px;overflow:hidden;flex:0 0 110px;background:var(--glass);display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:600}
+    .project-info h4{margin:0 0 6px;font-size:15px}
+    .tags{display:flex;gap:8px;flex-wrap:wrap}
+    .tag{background:rgba(255,255,255,0.03);padding:6px 8px;border-radius:999px;font-size:12px;color:var(--muted)}
+
+    /* Right column */
+    .side-section{display:flex;flex-direction:column;gap:12px}
+    .skills{display:flex;flex-wrap:wrap;gap:8px}
+    .skill{background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:9px 10px;border-radius:10px;font-weight:600;color:#dff6fb}
+
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}
+    .gallery img{width:100%;height:80px;object-fit:cover;border-radius:10px;cursor:pointer;border:2px solid transparent}
+    .gallery img:hover{transform:scale(1.02);border-color:rgba(255,255,255,0.04)}
+
+    footer{margin-top:18px;color:var(--muted);font-size:13px;text-align:center}
+
+    /* Lightbox */
+    .lightbox{position:fixed;inset:0;background:rgba(2,6,23,0.8);display:none;align-items:center;justify-content:center;padding:28px}
+    .lightbox img{max-width:90%;max-height:80%;border-radius:10px;box-shadow:0 8px 40px rgba(2,6,23,0.8)}
+
+    /* Responsive */
+    @media (max-width:980px){main{grid-template-columns:1fr} .side-section{order:2}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="avatar"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400&auto=format&fit=crop&crop=faces" alt="profile"></div>
+      <div class="hero">
+        <h1>Santhosh M — Data Analyst</h1>
+        <p class="muted">Turning raw data into clear insights • Google Sheets automation • SQL • Python • Power BI</p>
+        <div class="top-actions">
+          <a class="btn" href="#projects">View Projects</a>
+          <a class="btn secondary" href="#contact">Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div>
+        <section class="card about">
+          <div class="section-title"><h3>About</h3><span class="muted">Data-driven problem solver</span></div>
+          <p>I build dependable reporting and automation solutions — from Google Sheets scripts that sync biometric attendance to consolidated reports for 3000+ employees, to SQL-powered dashboards and Power BI visualizations. I focus on clean data pipelines, repeatable automation, and visual stories that help teams act faster.</p>
+        </section>
+
+        <section id="projects" class="card" style="margin-top:12px">
+          <div class="section-title"><h3>Selected Projects</h3><span class="muted">Projects that show impact</span></div>
+          <div class="projects">
+
+            <article class="project">
+              <div class="project-thumb">Attendance</div>
+              <div class="project-info">
+                <h4>Google Sheets Attendance Automation</h4>
+                <div class="muted" style="margin-bottom:6px">Automated import of biometric reports, consolidated present/absent status, lockable protected ranges.</div>
+                <div class="tags">
+                  <div class="tag">Google Apps Script</div>
+                  <div class="tag">Python (optional)</div>
+                  <div class="tag">Sheets API</div>
+                </div>
+              </div>
+            </article>
+
+            <article class="project">
+              <div class="project-thumb">Dash</div>
+              <div class="project-info">
+                <h4>Employee Attendance Dashboard</h4>
+                <div class="muted" style="margin-bottom:6px">Interactive Power BI dashboard showing daily presence, late-ins, and department-level summaries.</div>
+                <div class="tags">
+                  <div class="tag">Power BI</div>
+                  <div class="tag">DAX</div>
+                  <div class="tag">Data Modeling</div>
+                </div>
+              </div>
+            </article>
+
+            <article class="project">
+              <div class="project-thumb">Sheets</div>
+              <div class="project-info">
+                <h4>Bulk Lock & Protected Ranges Tool</h4>
+                <div class="muted" style="margin-bottom:6px">Custom script that programmatically locks cells containing the value "W" across multiple sheets while excluding a master sheet.</div>
+                <div class="tags">
+                  <div class="tag">Apps Script</div>
+                  <div class="tag">Automation</div>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+        <section class="card" style="margin-top:12px">
+          <div class="section-title"><h3>Experience Highlights</h3><span class="muted">Results & metrics</span></div>
+          <ul style="margin:0;padding-left:18px;color:#d7e6f5;line-height:1.7">
+            <li>Automated attendance process for 3000+ employees — reduced manual effort by ~85%.</li>
+            <li>Designed consolidated sheet "Zone 2" logic to exclude from automated locking script.</li>
+            <li>Built scheduled scripts to ingest biometric CSVs and update daily dashboards.</li>
+          </ul>
+        </section>
+
+      </div>
+
+      <aside class="side-section">
+        <div class="card">
+          <div class="section-title"><h3>Skills</h3><span class="muted">Tools & Tech</span></div>
+          <div class="skills">
+            <div class="skill">Google Sheets</div>
+            <div class="skill">Apps Script</div>
+            <div class="skill">Python</div>
+            <div class="skill">SQL</div>
+            <div class="skill">Power BI</div>
+            <div class="skill">Excel</div>
+            <div class="skill">Data Viz</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="section-title"><h3>Project Gallery</h3><span class="muted">Click to enlarge</span></div>
+          <div class="gallery">
+            <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=800&auto=format&fit=crop" alt="screenshot1">
+            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=800&auto=format&fit=crop" alt="screenshot2">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop" alt="screenshot3">
+            <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=800&auto=format&fit=crop" alt="screenshot4">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop" alt="screenshot5">
+            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop" alt="screenshot6">
+          </div>
+        </div>
+
+        <div class="card" id="contact">
+          <div class="section-title"><h3>Contact</h3><span class="muted">Let's collaborate</span></div>
+          <p class="muted" style="margin:0 0 10px">Email: <strong style="color:#dff6fb">your.email@example.com</strong></p>
+          <a class="btn" href="mailto:your.email@example.com">Email me</a>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      Built with ❤️ • Customize this single-file portfolio — replace images, update project descriptions, and add links to live demos.
+    </footer>
+  </div>
+
+  <div class="lightbox" id="lightbox"><img src="" alt="expanded"></div>
+
+  <script>
+    // Lightbox
+    const imgs = document.querySelectorAll('.gallery img');
+    const lightbox = document.getElementById('lightbox');
+    const lbimg = lightbox.querySelector('img');
+    imgs.forEach(img=>{
+      img.addEventListener('click',()=>{
+        lbimg.src = img.src;
+        lightbox.style.display = 'flex';
+      });
+    });
+    lightbox.addEventListener('click',()=> lightbox.style.display='none');
+
+    // Small enhancement: scroll to projects on click
+    document.querySelectorAll('a[href="#projects"]').forEach(a=>{
+      a.addEventListener('click',(e)=>{e.preventDefault();document.getElementById('projects').scrollIntoView({behavior:'smooth'});});
+    });
+  </script>
+</body>
+</html>
